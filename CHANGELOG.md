@@ -16,6 +16,7 @@
 - [#2548](https://github.com/poanetwork/blockscout/pull/2548) - CSS preload support in Firefox
 - [#2547](https://github.com/poanetwork/blockscout/pull/2547) - do not show eth value if it's zero on the transaction overview page
 - [#2543](https://github.com/poanetwork/blockscout/pull/2543) - do not hide search input during logs search
+- [#2538](https://github.com/poanetwork/blockscout/pull/2538) - fetch the last not empty coin balance records
 - [#2524](https://github.com/poanetwork/blockscout/pull/2524) - fix dark theme validator data styles
 - [#2532](https://github.com/poanetwork/blockscout/pull/2532) - don't show empty token transfers on the transaction overview page
 - [#2528](https://github.com/poanetwork/blockscout/pull/2528) - fix coin history chart data

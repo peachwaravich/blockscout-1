@@ -8,6 +8,7 @@
 - [#2563](https://github.com/poanetwork/blockscout/pull/2563) - Fix view less transfers button
 - [#2556](https://github.com/poanetwork/blockscout/issues/2556) - fix first page button for uncles and reorgs
 - [#2538](https://github.com/poanetwork/blockscout/pull/2538) - fetch the last not empty coin balance records
+- [#2497](https://github.com/poanetwork/blockscout/pull/2497) - Add generic Ordered Cache behaviour and implementation
 
 ### Chore
 

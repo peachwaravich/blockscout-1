@@ -1,6 +1,7 @@
 ## Current
 
 ### Features
+- [#2561](https://github.com/poanetwork/blockscout/pull/2561) - Add token's type to the response of tokenlist method
 
 ### Fixes
 - [#2563](https://github.com/poanetwork/blockscout/pull/2563) - Fix view less transfers button

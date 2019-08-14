@@ -46,11 +46,17 @@ function moveStake ($modal, fromAddress, store, msg) {
   const decimals = store.getState().tokenDecimals
 
   const minStake = new BigNumber(msg.min_delegator_stake)
+  const currentStake = new BigNumber(msg.delegator_staked)
   const maxAllowed = new BigNumber(msg.max_withdraw_allowed)
   const stake = new BigNumber($modal.find('[move-amount]').val().replace(',', '.').trim()).shiftedBy(decimals).integerValue()
 
-  if (!stake.isPositive() || stake.isLessThan(minStake) || stake.isGreaterThan(maxAllowed)) {
-    openErrorModal('Error', `You cannot stake less than ${minStake.shiftedBy(-decimals)} ${store.getState().tokenSymbol} and more than ${maxAllowed.shiftedBy(-decimals)} ${store.getState().tokenSymbol}`)
+  if (!stake.isPositive() || stake.isGreaterThan(maxAllowed)) {
+    openErrorModal('Error', `You cannot move more than ${maxAllowed.shiftedBy(-decimals)} ${store.getState().tokenSymbol} right now`)
+    return false
+  }
+
+  if (!stake.isPositive() || stake.plus(currentStake).isLessThan(minStake)) {
+    openErrorModal('Error', `You cannot move less than ${minStake.shiftedBy(-decimals)} ${store.getState().tokenSymbol} to this pool`)
     return false
   }
 

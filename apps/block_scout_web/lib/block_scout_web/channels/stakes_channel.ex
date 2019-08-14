@@ -91,6 +91,7 @@ defmodule BlockScoutWeb.StakesChannel do
 
   def handle_in("render_make_stake", %{"address" => staking_address}, socket) do
     pool = Chain.staking_pool(staking_address)
+    delegator = Chain.staking_pool_delegator(staking_address, socket.assigns.account)
     min_delegator_stake = ContractState.get(:min_delegator_stake)
     token = ContractState.get(:token)
     balance = Chain.fetch_last_token_balance(socket.assigns.account, token.contract_address_hash)
@@ -100,11 +101,14 @@ defmodule BlockScoutWeb.StakesChannel do
         min_delegator_stake: min_delegator_stake,
         balance: balance,
         token: token,
-        pool: pool
+        pool: pool,
+        delegator: delegator
       )
 
     result = %{
       html: html,
+      balance: balance,
+      delegator_staked: delegator && delegator.stake_amount || 0,
       min_delegator_stake: min_delegator_stake,
       self_staked_amount: pool.self_staked_amount,
       staked_amount: pool.staked_amount

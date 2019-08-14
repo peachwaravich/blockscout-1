@@ -82,6 +82,7 @@ defmodule BlockScoutWeb.StakesChannel do
 
     result = %{
       html: html,
+      balance: balance,
       min_candidate_stake: min_candidate_stake
     }
 

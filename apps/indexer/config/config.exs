@@ -38,7 +38,7 @@ config :indexer,
   first_block: System.get_env("FIRST_BLOCK") || "0",
   last_block: System.get_env("LAST_BLOCK") || ""
 
-# config :indexer, Indexer.Fetcher.ReplacedTransaction.Supervisor, disabled?: true
+config :indexer, Indexer.Fetcher.ReplacedTransaction.Supervisor, disabled?: true
 config :indexer, Indexer.Fetcher.BlockReward.Supervisor, disabled?: true
 config :indexer, Indexer.Fetcher.StakingPools.Supervisor, disabled?: true
 

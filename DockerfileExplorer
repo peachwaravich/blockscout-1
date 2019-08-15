@@ -1,0 +1,14 @@
+#FROM puppeth/blockscout@sha256:54f3ab56488a73e172fcfe236b3a44fce750cf7e19ecf83e89bc8a11f1ad5087
+#FROM puppeth/blockscout:latest
+#FROM bitwalker/alpine-erlang:22.0.4
+
+#FROM puppeth/blockscout@sha256:54f3ab56488a73e172fcfe236b3a44fce750cf7e19ecf83e89bc8a11f1ad5087
+FROM blockscout
+
+WORKDIR /opt/app
+
+ADD start_explorer.sh .
+RUN chmod +x start_explorer.sh 
+CMD ./start_explorer.sh
+
+# CMD bash

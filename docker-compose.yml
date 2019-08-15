@@ -1,0 +1,33 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10.3
+    environment:
+      POSTGRES_PASSWORD: 
+      POSTGRES_USER: postgres
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    expose:
+      - "5432"
+  explorer:
+    build:
+      context: .
+      dockerfile: DockerfileExplorer
+    restart: "no"
+    tty: true
+    environment:
+      - DATABASE_URL=ecto://postgres:@postgres/explorer?ssl=false
+      - ETHEREUM_JSONRPC_VARIANT=parity
+      - ETHEREUM_JSONRPC_HTTP_URL=http://192.168.50.100:8541
+      - ETHEREUM_JSONRPC_TRACE_URL=http://192.168.50.100:8541
+      - ETHEREUM_JSONRPC_WS_URL=ws://192.168.50.100:8541
+    volumes:
+      - blockscout-data:/opt/app 
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+volumes:
+  blockscout-data:
+  pgdata:

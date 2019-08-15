@@ -4,9 +4,13 @@ RUN apk --no-cache --update add alpine-sdk gmp-dev automake libtool inotify-tool
 
 EXPOSE 4000
 
+#ENV DFLAGS="-L/usr/local/opt/openssl/lib"
+#ENV CPPFLAGS="-I/usr/local/opt/openssl/include"
+
 ENV PORT=4000 \
     MIX_ENV="prod" \
     SECRET_KEY_BASE="RMgI4C1HSkxsEjdhtGMfwAHfyT6CKWXOgzCboJflfSm4jeAlic52io05KB6mqzc5"
+
 
 # Cache elixir deps
 ADD mix.exs mix.lock ./
@@ -15,7 +19,9 @@ ADD apps/explorer/mix.exs ./apps/explorer/
 ADD apps/ethereum_jsonrpc/mix.exs ./apps/ethereum_jsonrpc/
 ADD apps/indexer/mix.exs ./apps/indexer/
 
-RUN mix do deps.get, deps.compile
+#RUN mix deps.update keccakf1600
+RUN mix deps.clean keccakf1600
+RUN HEX_HTTP_CONCURRENCY=4 HEX_HTTP_TIMEOUT=120 mix do deps.get, deps.compile
 
 ADD . .
 

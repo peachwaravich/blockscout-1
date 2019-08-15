@@ -41,6 +41,15 @@ RUN cd apps/explorer/ && \
     npm install && \
     apk update && apk del --force-broken-world alpine-sdk gmp-dev automake libtool inotify-tools autoconf python
 
+#FROM blockscout
+
+#WORKDIR /opt/app
+
+ADD start_explorer.sh .
+RUN chmod +x start_explorer.sh
+CMD ./start_explorer.sh
+
+
 # RUN mix do ecto.drop --force, ecto.create, ecto.migrate
 
 # USER default

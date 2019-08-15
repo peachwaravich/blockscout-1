@@ -13,7 +13,7 @@ services:
   explorer:
     build:
       context: .
-      dockerfile: DockerfileExplorer
+#      dockerfile: DockerfileExplorer
     restart: "no"
     tty: true
     environment:
@@ -22,12 +22,12 @@ services:
       - ETHEREUM_JSONRPC_HTTP_URL=http://192.168.50.100:8541
       - ETHEREUM_JSONRPC_TRACE_URL=http://192.168.50.100:8541
       - ETHEREUM_JSONRPC_WS_URL=ws://192.168.50.100:8514
-    volumes:
-      - blockscout-data:/opt/app 
+#    volumes:
+ #     - blockscout-data:/opt/app 
     ports:
       - "4000:4000"
     depends_on:
       - postgres
 volumes:
-  blockscout-data:
+ # blockscout-data:
   pgdata:

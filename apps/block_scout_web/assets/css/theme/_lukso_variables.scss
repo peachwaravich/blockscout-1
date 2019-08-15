@@ -7,7 +7,9 @@ $additional-font: #a1ded1;
 $tile-body-a-color: $tertiary;
 $tile-type-block-color: $tertiary;
 $tile-type-progress-bar-color: $tertiary;
-a.tile-title { color: $tertiary !important; }
+a.tile-title {
+  color: $tertiary !important;
+}
 
 // footer
 $footer-background-color: $primary;
@@ -130,18 +132,22 @@ $dashboard-banner-network-plain-container-height: 150px;
         &.dashboard-banner-network-stats-item-1 {
           order: 1;
         }
+
         &.dashboard-banner-network-stats-item-2 {
           order: 2;
         }
+
         &.dashboard-banner-network-stats-item-3 {
           order: 4;
           margin-right: 0;
         }
+
         &.dashboard-banner-network-stats-item-4 {
           order: 3;
         }
       }
     }
+
     &:after {
       box-shadow: none;
     }
@@ -162,9 +168,11 @@ $dark-primary-alternate: #a96c55;
   .dashboard-banner-network-stats-value {
     color: $dark-primary !important;
   }
+
   .layout-container .dashboard-banner-container {
-    background-color: #282945 !important;
+    background-color: #f26d23 !important;
   }
+
   .dashboard-banner-network-plain-container::after {
     box-shadow: none !important;
   }

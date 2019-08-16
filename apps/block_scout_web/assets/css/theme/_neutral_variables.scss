@@ -1,12 +1,12 @@
 // general
 $primary: #f26d23;
-$color: #553c9a;
+$color: #751329;
 $secondary: #87e1a9;
 $tertiary: #bf9cff;
 $additional-font: #fff;
 
 // footer
-$footer-background-color: #f37d3b;
+$footer-background-color: #f26d23;
 $footer-title-color: #fff;
 $footer-text-color: #fff;
 $footer-item-disc-color: $secondary;
@@ -24,9 +24,9 @@ $dashboard-stats-item-value-color: #fff; // stat values
 
 $dashboard-stats-item-border-color: $secondary; // stat border
 
-$dashboard-banner-gradient-start: $primary; // gradient begin
+$dashboard-banner-gradient-start: $color; // gradient begin
 
-$dashboard-banner-gradient-end: lighten($color, 5); // gradient end
+$dashboard-banner-gradient-end: lighten($primary, 4); // gradient end
 
 $dashboard-banner-network-plain-container-background-color: $primary; // stats bg
 

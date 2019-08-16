@@ -17,14 +17,14 @@
           </button>
         </div>
         <!-- Legend -->
-       <!-- <div class="dashboard-banner-chart-legend">
-          <div class="dashboard-banner-chart-legend-item">
+        <div class="dashboard-banner-chart-legend">
+         <!-- <div class="dashboard-banner-chart-legend-item">
             <span class="dashboard-banner-chart-legend-label">
               <%= gettext "Price" %>
             </span>
             <span class="dashboard-banner-chart-legend-value" data-selector="exchange-rate" data-wei-value="<%= Explorer.Chain.Wei.from(Decimal.new(1), :ether).value %>" data-usd-exchange-rate="<%= @exchange_rate.usd_value %>">
             </span>
-          </div>
+          </div> -->
           <div class="dashboard-banner-chart-legend-item">
             <span class="dashboard-banner-chart-legend-label">
               <%= gettext "Market Cap" %>
@@ -33,7 +33,7 @@
             </span>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- Stats -->
       <div class="dashboard-banner-network-plain-container">
         <div class="dashboard-banner-network-stats">

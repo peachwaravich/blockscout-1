@@ -17,7 +17,7 @@
           </button>
         </div>
         <!-- Legend -->
-        <div class="dashboard-banner-chart-legend">
+       <!-- <div class="dashboard-banner-chart-legend">
           <div class="dashboard-banner-chart-legend-item">
             <span class="dashboard-banner-chart-legend-label">
               <%= gettext "Price" %>
@@ -33,48 +33,49 @@
             </span>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Stats -->
-      <div class="dashboard-banner-network-plain-container">
-        <div class="dashboard-banner-network-stats">
-          <%= case @average_block_time do %>
-            <% {:error, :disabled} -> %>
-              <%= nil %>
-            <% average_block_time -> %>
-              <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
-                <span class="dashboard-banner-network-stats-label">
-                  <%= gettext "Average block time" %>
-                </span>
-                <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
-                  <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
-                </span>
+      <div class="dashboard-banner-network-stats">
+                <%= case @average_block_time do %>
+                  <% {:error, :disabled} -> %>
+                    <%= nil %>
+                  <% average_block_time -> %>
+                    <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
+                      <span class="dashboard-banner-network-stats-label">
+                        <%= gettext "Average block time" %>
+                      </span>
+                      <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
+                        <%= Timex.format_duration(average_block_time, Explorer.Counters.AverageBlockTimeDurationFormat) %>
+                      </span>
+                    </div>
+                <% end %>
+                <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-2">
+                  <span class="dashboard-banner-network-stats-label">
+                    <%= gettext "Total transactions" %>
+                  </span>
+                  <span class="dashboard-banner-network-stats-value" data-selector="transaction-count">
+                    <%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %>
+                  </span>
+                </div>
+                <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-3">
+                  <span class="dashboard-banner-network-stats-label">
+                    <%= gettext "Total blocks" %>
+                  </span>
+                  <span class="dashboard-banner-network-stats-value" data-selector="block-count">
+                    <%= BlockScoutWeb.Cldr.Number.to_string!(@block_count, format: "#,###") %>
+                  </span>
+                </div>
+                <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-4">
+                  <span class="dashboard-banner-network-stats-label">
+                    <%= gettext "Wallet addresses" %>
+                  </span>
+                  <span class="dashboard-banner-network-stats-value" data-selector="address-count">
+                    <%= BlockScoutWeb.Cldr.Number.to_string!(@address_count, format: "#,###") %>
+                  </span>
+                </div>
               </div>
-          <% end %>
-          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-2">
-            <span class="dashboard-banner-network-stats-label">
-              <%= gettext "Total transactions" %>
-            </span>
-            <span class="dashboard-banner-network-stats-value" data-selector="transaction-count">
-              <%= BlockScoutWeb.Cldr.Number.to_string!(@transaction_estimated_count, format: "#,###") %>
-            </span>
-          </div>
-          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-3">
-            <span class="dashboard-banner-network-stats-label">
-              <%= gettext "Total blocks" %>
-            </span>
-            <span class="dashboard-banner-network-stats-value" data-selector="block-count">
-              <%= BlockScoutWeb.Cldr.Number.to_string!(@block_count, format: "#,###") %>
-            </span>
-          </div>
-          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-4">
-            <span class="dashboard-banner-network-stats-label">
-              <%= gettext "Wallet addresses" %>
-            </span>
-            <span class="dashboard-banner-network-stats-value" data-selector="address-count">
-              <%= BlockScoutWeb.Cldr.Number.to_string!(@address_count, format: "#,###") %>
-            </span>
-          </div>
-        </div>
+      <div class="dashboard-banner-network-plain-container">
+
       </div>
     </div>
   </div>

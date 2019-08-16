@@ -22,17 +22,9 @@ services:
       - ETHEREUM_JSONRPC_HTTP_URL=http://206.189.46.234:8541
       - ETHEREUM_JSONRPC_TRACE_URL=http://206.189.46.234:8541
       - ETHEREUM_JSONRPC_WS_URL=ws://206.189.46.234:8514
-<<<<<<< HEAD
-#    volumes:
- #     - blockscout-data:/opt/app 
-=======
-    #    volumes:
-    #     - blockscout-data:/opt/app
->>>>>>> 8ece612b08548f6ce4ab7b4ec1bf61fadbe9d523
     ports:
       - "4000:4000"
     depends_on:
       - postgres
 volumes:
-  # blockscout-data:
   pgdata:

@@ -94,10 +94,12 @@ $footer-logo-width: auto !default;
 
       a {
         transition: $transition-cont;
+
         &:hover {
           text-decoration: none;
           color: #fff;
         }
+
         &:focus {
           color: darken($footer-text-color, 5);
         }

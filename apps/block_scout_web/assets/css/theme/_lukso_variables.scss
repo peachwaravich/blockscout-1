@@ -1,5 +1,6 @@
 // general
-$primary: #1d3154;
+$primary: #f26d23;
+$color: #553c9a;
 $secondary: #fdcec4;
 $tertiary: #a96c55;
 $additional-font: #a1ded1;
@@ -31,8 +32,8 @@ $dashboard-banner-chart-legend-value-color: $primary; // chart labels
 $dashboard-stats-item-value-color: $primary; // stat values
 
 $dashboard-stats-item-border-color: $primary; // stat border
-$dashboard-banner-gradient-start: $secondary; // gradient begin
-$dashboard-banner-gradient-end: $secondary; // gradient end
+$dashboard-banner-gradient-start: $primary; // gradient begin
+$dashboard-banner-gradient-end: lighten($color, 5); // gradient end
 $dashboard-banner-network-plain-container-background-color: $secondary; // stats bg
 
 // navigation

@@ -72,7 +72,7 @@ defmodule BlockScoutWeb.LayoutView do
   end
 
   def logo do
-    Keyword.get(application_config(), :logo) || "/images/blockscout_logo.svg"
+    Keyword.get(application_config(), :logo) || "/images/public_images_logo.png"
   end
 
   def logo_footer do
@@ -178,9 +178,11 @@ defmodule BlockScoutWeb.LayoutView do
       end
 
     get_other_networks
-    |> Enum.reject(fn %{title: title} ->
-      title == subnetwork_title()
-    end)
+    |> Enum.reject(
+         fn %{title: title} ->
+           title == subnetwork_title()
+         end
+       )
     |> Enum.sort()
   end
 
@@ -234,9 +236,9 @@ defmodule BlockScoutWeb.LayoutView do
     |> Application.get_env(:webapp_url)
     |> validate_url()
     |> case do
-      :error -> chain_path(conn, :show)
-      {:ok, url} -> url
-    end
+         :error -> chain_path(conn, :show)
+         {:ok, url} -> url
+       end
   end
 
   def api_url do
@@ -244,9 +246,9 @@ defmodule BlockScoutWeb.LayoutView do
     |> Application.get_env(:api_url)
     |> validate_url()
     |> case do
-      :error -> ""
-      {:ok, url} -> url
-    end
+         :error -> ""
+         {:ok, url} -> url
+       end
   end
 
   defp validate_url(url) when is_binary(url) do

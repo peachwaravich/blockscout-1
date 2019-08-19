@@ -34,12 +34,12 @@
               <%= link to: block_path(@conn, :index), class: "dropdown-item #{tab_status("blocks", @conn.request_path)}" do %>
                 <%= gettext("Blocks") %>
               <% end %>
-              <%= link to: uncle_path(@conn, :uncle), class: "dropdown-item #{tab_status("uncles", @conn.request_path)}" do %>
-                <%= gettext("Uncles") %>
-              <% end %>
-              <%= link to: reorg_path(@conn, :reorg), class: "dropdown-item #{tab_status("reorgs", @conn.request_path)}" do %>
-                <%= gettext("Forked Blocks (Reorgs)") %>
-              <% end %>
+#              <%= link to: uncle_path(@conn, :uncle), class: "dropdown-item #{tab_status("uncles", @conn.request_path)}" do %>
+#                <%= gettext("Uncles") %>
+#              <% end %>
+#              <%= link to: reorg_path(@conn, :reorg), class: "dropdown-item #{tab_status("reorgs", @conn.request_path)}" do %>
+#                <%= gettext("Forked Blocks (Reorgs)") %>
+#              <% end %>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -63,14 +63,14 @@
                   ) %>
             </div>
           </li>
-          <li class="nav-item">
+         <!-- <li class="nav-item">
             <%= link to: address_path(@conn, :index), class: "nav-link topnav-nav-link #{tab_status("accounts", @conn.request_path)}" do %>
               <span class="nav-link-icon">
                 <%= render BlockScoutWeb.IconsView, "_accounts_icon.html" %>
               </span>
               <%= gettext("Accounts") %>
             <% end %>
-          </li>
+          </li> -->
         <% end %>
         <%= if Application.get_env(:block_scout_web, BlockScoutWeb.ApiRouter)[:reading_enabled] || Application.get_env(:block_scout_web, :api_url) do %>
           <li class="nav-item dropdown">

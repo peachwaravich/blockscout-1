@@ -35,7 +35,33 @@
         </div>
       </div>
       <!-- Stats -->
-      <div class="dashboard-banner-network-plain-container">
+        <div class="dashboard-banner-network-stats" style="
+    align-content: center;">
+              <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
+                <span class="dashboard-banner-network-stats-label">
+Average block time                </span>
+                <span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
+0 milliseconds                </span>
+              </div>
+          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-2">
+            <span class="dashboard-banner-network-stats-label">
+Total transactions            </span>
+            <span class="dashboard-banner-network-stats-value" data-selector="transaction-count">2</span>
+          </div>
+          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-3">
+            <span class="dashboard-banner-network-stats-label">
+Total blocks            </span>
+            <span class="dashboard-banner-network-stats-value" data-selector="block-count">6,854</span>
+          </div>
+          <div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-4">
+            <span class="dashboard-banner-network-stats-label">
+Wallet addresses            </span>
+            <span class="dashboard-banner-network-stats-value" data-selector="address-count">
+0            </span>
+          </div>
+        </div>
+
+     <!-- <div class="dashboard-banner-network-plain-container">
         <div class="dashboard-banner-network-stats">
           <%= case @average_block_time do %>
             <% {:error, :disabled} -> %>
@@ -75,7 +101,7 @@
             </span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

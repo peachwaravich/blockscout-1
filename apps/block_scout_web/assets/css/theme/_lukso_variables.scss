@@ -1,6 +1,6 @@
 // general
 $primary: #f26d23;
-$color: #553c9a;
+$color: #f26d23;
 $secondary: #fdcec4;
 $tertiary: #a96c55;
 $additional-font: #a1ded1;
@@ -33,7 +33,7 @@ $dashboard-stats-item-value-color: $primary; // stat values
 
 $dashboard-stats-item-border-color: $primary; // stat border
 $dashboard-banner-gradient-start: $primary; // gradient begin
-$dashboard-banner-gradient-end: lighten($color, 5); // gradient end
+$dashboard-banner-gradient-end: $color; // gradient end
 $dashboard-banner-network-plain-container-background-color: $secondary; // stats bg
 
 // navigation
